@@ -17,18 +17,10 @@ User.init(
             autoIncrement: true,
         },
 
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-
-        email: {
+        username: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
-            validate: {
-                isEmail: true,
-            },
         },
 
         password: {
@@ -52,7 +44,7 @@ User.init(
             },
         },
         sequelize,
-        timestamps: true,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'user',
