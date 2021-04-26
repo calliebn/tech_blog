@@ -6,10 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Blog</title>
+    <link rel="stylesheet" type="text/css" href="public/css/style.css">
 </head>
 
 <body>
 
+    <header>
+        <h1>Tech Blog</h1>
+        <nav>
+            <p><a href="/">Home</a></p>
+            <p><a href="/dashboard">Dashboard</a></p>
+            {{#if loggedIn}}
+            <p><a href="/" id="logout">Log Out</a></p>
+            {{else}}
+            <p><a href="/login">Log In</a></p>
+            {{/if}}
+        </nav>
+    </header>
+
+    <main>
+        {{{body}}}
+    </main>
+
+    {{#if loggedIn}}
+    <script src="/js/loggedout.js"></script>
+    {{/if}}
 </body>
 
 </html>
