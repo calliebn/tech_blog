@@ -71,3 +71,27 @@ router.get('/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
+
+// Updates an existing blog post
+router.put('/:id', withAuth, (req, res) => {
+    Post.update({
+        title: req.params.title,
+        content: req.params.content
+    },
+        {
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(dbPostData => {
+            if (!dbPostData) {
+                res.status(404).json({ message: 'A post with this is does not exist' });
+                return
+            }
+            res.json(dbPostData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
