@@ -95,3 +95,19 @@ router.put('/:id', withAuth, (req, res) => {
             res.status(500).json(err);
         });
 });
+
+// Creates a new blog post
+router.post('/', withAuth, (req, res) => {
+    try {
+        const newPost = await Post.create({
+            title: req.params.title,
+            content: req.params.content,
+            user_id: req.session.user_id
+        });
+
+        res.status(200).json(newPost)
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
