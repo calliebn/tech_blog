@@ -97,7 +97,7 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 // Creates a new blog post
-router.post('/', withAuth, (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const newPost = await Post.create({
             title: req.params.title,
@@ -111,3 +111,25 @@ router.post('/', withAuth, (req, res) => {
     }
 });
 
+// Deletes a blog post
+router.delete('/id', withAuth, async (req, res) => {
+    try {
+        const postData = await Post.destroy({
+            where: {
+                id: req.params.id,
+                user_id: req.params.user_id,
+            },
+        });
+
+        if (!postData) {
+            res.status(404).json({ message: 'A post with this id does not exist' });
+            return;
+        }
+
+        res.status(200).json(postData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+module.exports = router;
