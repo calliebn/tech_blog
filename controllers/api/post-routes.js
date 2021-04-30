@@ -85,7 +85,7 @@ router.put('/:id', withAuth, (req, res) => {
         })
         .then(dbPostData => {
             if (!dbPostData) {
-                res.status(404).json({ message: 'A post with this is does not exist' });
+                res.status(404).json({ message: 'A post with this id does not exist' });
                 return
             }
             res.json(dbPostData);
