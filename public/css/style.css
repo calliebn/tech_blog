@@ -12,10 +12,9 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--navy);
-  font-weight: 800;
   line-height: 1.2;
   margin: 0;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
 h1 {
@@ -33,74 +32,13 @@ h3 {
 
 p {
   margin-top: 0;
-}
-
-body {
-  background-color: var(--navy);
-  font-family: Helvetica, Arial, sans-serif;
   font-size: 18px;
-  line-height: 1.5;
-  margin: 0 auto;
-  height: 100%;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
-header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  background-color: var(--burly);
-  padding: 20px;
-  margin: 0 auto;
-}
-
-header h1 {
-  font-size: 36px;
-  color: var(--navy);
-  line-height: 1em;
-}
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-nav p {
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--navy);
-  line-height: 1.5;
-  text-align: right;
-  padding-left: 10px;
-  margin: 0;
-}
-
-nav a:link {
-  color: var(--navy);
-  text-decoration: none;
-}
-
-nav a:visited {
-  color: var(--dkgrey);
-}
-
-nav a:hover {
-  color: var(--aqua);
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: space-between;
-  justify-content: space-evenly;
-  padding: 20px;
-  width: 60%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-section {
-  background-color: #fff;
-  padding: 30px;
-  margin-bottom: 20px;
-  border-radius: 20px 0;
+.title {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 800;
 }

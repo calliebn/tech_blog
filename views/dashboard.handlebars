@@ -1,8 +1,17 @@
-<div class="section">
-    <h2>My Dashboard</h2>
-    <div class="viewmyposts">
+<div class="mb-5 pt-3">
 
-    </div>
-    <a href="/newpost">Add New Post</a>
+    {{#if posts.length}}
+    <h2>My Posts</h2>
+    {{#each posts as |post|}}
+</div>
+{{> dash-postinfo post}}
+{{/each}}
 
 </div>
+{{/if}}
+
+{{else}}
+<h6 class="pb-4 has-text-centered is italic">You do not have any posts!</h6>
+
+<button type="submit" class="btn"><a class="link" href="/dashboard/new">Create New Post</a></button>
+<script src="/js/new-post.js"></script>

@@ -6,23 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Blog</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>Tech Blog</h1>
-        <nav>
-            <p><a href="/">Home</a></p>
-            <p><a href="/dashboard">Dashboard</a></p>
-            {{#if loggedIn}}
-            <p><a href="/" id="logout">Log Out</a></p>
-            {{else}}
-            <p><a href="/login">Log In</a></p>
-            {{/if}}
-        </nav>
-    </header>
+    <nav class="navbar is primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <div class="title">
+                Tech Blog
+            </div>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbar" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="/">Home</a>
+                <a class="navbar-item" href="/dashboard">Dashboard</a>
+                {{#if loggedIn}}
+                <a class="navbar-item" href="/logout">Log Out</a>
+                {{else}}
+                <a class="navbar-item" href="login">Log In</a>
+                {{/if}}
+            </div>
+        </div>
+
+    </nav>
 
     <main>
         {{{body}}}
