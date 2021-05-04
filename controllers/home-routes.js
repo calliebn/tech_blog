@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
             ]
         })
 
-        const posts = postData.map((post) => post.get({ plain: true }));
+        const posts = newPost.map((post) => post.get({ plain: true }));
 
         req.render('home', {
             posts,
@@ -73,12 +73,12 @@ router.get('/post/:id', async, (req, res) => {
             }]
         })
 
-        if (!postData) {
+        if (!onePost) {
             res.status(404).json({ message: 'A post with this id does not exist' });
             return;
         }
 
-        const post = postData.get({ plain: true });
+        const post = onePost.get({ plain: true });
         res.render('single-post', { post, logged_in: true });
 
     }
@@ -116,7 +116,7 @@ router.get('/posts-comments', async, (req, res) => {
             return;
         }
 
-        const post = postData.get({ plain: true });
+        const post = postComments.get({ plain: true });
         res.render('post-comments', { post, logged_in: req.session.logged_in });
 
     }
