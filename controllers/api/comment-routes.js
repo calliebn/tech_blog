@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
 router.post('/', withAuth, async (req, res) => {
     try {
         const newComment = await Comment.create({
-            comment_text: req.body.comment_text,
+            comments: req.body.comments,
             post_id: req.body.post_id,
             user_id: req.body.user_id,
         })
@@ -43,7 +43,7 @@ router.post('/', withAuth, async (req, res) => {
 // Updates an existing comment
 router.put('/:id', withAuth, (req, res) => {
     Comment.update({
-        comment_text: req.body.comment_text
+        comments: req.body.comments
     },
         {
             where: {

@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
             ],
             include: [{
                 model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                attributes: ['id', 'comments', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
 
         const posts = newPost.map((post) => post.get({ plain: true }));
 
-        req.render('home', {
+        res.render('home', {
             posts,
             logged_in: req.session.logged_in
         });
@@ -45,11 +45,11 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('./signup', (req, res) => {
+router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
-router.get('/post/:id', async, (req, res) => {
+router.get('/post/:id', async (req, res) => {
     try {
         const onePost = await Post.findOne({
             where: {
@@ -65,7 +65,7 @@ router.get('/post/:id', async, (req, res) => {
 
             include: [{
                 model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                attributes: ['id', 'comments', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -88,7 +88,7 @@ router.get('/post/:id', async, (req, res) => {
     }
 });
 
-router.get('/posts-comments', async, (req, res) => {
+router.get('/posts-comments', async (req, res) => {
     try {
         const postComments = await Post.findOne({
             where: {
@@ -104,7 +104,7 @@ router.get('/posts-comments', async, (req, res) => {
 
             include: [{
                 model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                attributes: ['id', 'comments', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
