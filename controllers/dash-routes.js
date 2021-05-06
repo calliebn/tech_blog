@@ -35,11 +35,12 @@ router.get('/', withAuth, async (req, res) => {
         const posts = newPost.map((post) => post.get({ plain: true }));
 
         //Passes serialized data and session flag into template
-        req.render('dashboard', {
+        res.render('dashboard', {
             posts,
-            logged_in: req.session.logged_in
+            loggedIn: req.session.loggedIn
         });
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
@@ -80,7 +81,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
         }
 
         const post = postData.get({ plain: true });
-        res.render('edit-post', { post, logged_in: true });
+        res.render('edit-post', { post, loggedIn: true });
 
     }
     catch (err) {
@@ -92,7 +93,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
 
 // Gets new posts
 router.get('/new', (req, res) => {
-    res.render('new-post');
+    res.render('newposts');
 });
 
 module.exports = router;

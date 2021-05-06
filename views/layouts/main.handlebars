@@ -8,7 +8,7 @@
     <title>Tech Blog</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -30,9 +30,9 @@
                 <a class="navbar-item" href="/">Home</a>
                 <a class="navbar-item" href="/dashboard">Dashboard</a>
                 {{#if loggedIn}}
-                <a class="navbar-item" href="/logout">Log Out</a>
+                <a class="navbar-item" href="/logout" id="logout">Log Out</a>
                 {{else}}
-                <a class="navbar-item" href="login">Log In</a>
+                <a class="navbar-item" href="/login">Log In</a>
                 {{/if}}
             </div>
         </div>
