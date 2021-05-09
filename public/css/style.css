@@ -23,6 +23,7 @@ h1 {
 
 h2 {
   font-size: 36px;
+  margin-bottom: 20px;
 }
 
 h3 {
@@ -42,4 +43,16 @@ p {
   font-size: 24px;
   font-weight: 800;
   padding: 5px 10px 10px 10px;
+}
+
+.button a {
+  color: var(--white);
+}
+
+main {
+  padding: 20px;
+}
+
+.form-entry {
+  margin-bottom: 20px;
 }
