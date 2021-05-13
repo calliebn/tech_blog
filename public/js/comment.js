@@ -16,13 +16,13 @@ const commentFormHandler = async (event) => {
                 'Content-Type': 'application/json',
             },
         });
-
-        if (response.ok) {
-            document.location.reload();
-        } else {
-            alert(response.statusText);
-            document.querySelector('#comment-form').style.display = "block";
-        }
+        console.log(postId, commentText, response);
+        // if (response.ok) {
+        //     document.location.reload();
+        // } else {
+        //     alert(response.statusText);
+        //     document.querySelector('#comment-form').style.display = "block";
+        // }
     }
 };
 

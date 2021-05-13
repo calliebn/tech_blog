@@ -79,7 +79,7 @@ router.get('/post/:id', async (req, res) => {
         }
 
         const post = onePost.get({ plain: true });
-        res.render('single-post', { post, logged_in: true });
+        res.render('onepost', { post, logged_in: true });
 
     }
     catch (err) {
