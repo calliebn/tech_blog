@@ -15,7 +15,7 @@ Comment.init(
         comments: {
             type: DataTypes.STRING,
             validate: {
-                len: [280],
+                len: [0, 280],
             }
         },
 

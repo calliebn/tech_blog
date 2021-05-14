@@ -13,10 +13,11 @@
         </div>
     </form>
 </div>
-{{/if}}
+{{!-- {{/if}}
+
+{{#if logged_in}} --}}
 
 {{> comments post.comments}}
 
-{{#if logged_in}}
 <script src="/js/comment.js"></script>
 {{/if}}

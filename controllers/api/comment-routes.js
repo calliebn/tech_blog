@@ -36,8 +36,9 @@ router.post('/', withAuth, async (req, res) => {
             user_id: req.session.user_id
         });
         // console.log(newComment, "INSERT DATA");
-        // res.status(200).json(newComment)
+        res.status(200).json(newComment)
     } catch (err) {
+        console.log(err)
         res.status(500).json(err);
     }
 });

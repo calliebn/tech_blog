@@ -17,12 +17,12 @@ const commentFormHandler = async (event) => {
             },
         });
         console.log(postId, commentText, response);
-        // if (response.ok) {
-        //     document.location.reload();
-        // } else {
-        //     alert(response.statusText);
-        //     document.querySelector('#comment-form').style.display = "block";
-        // }
+        if (response.ok) {
+            document.location.reload();
+        } else {
+            alert(response.statusText);
+            document.querySelector('#comment-form').style.display = "block";
+        }
     }
 };
 
