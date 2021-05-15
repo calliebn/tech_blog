@@ -75,19 +75,21 @@ router.get('/:id', (req, res) => {
 // Updates an existing blog post
 router.put('/:id', withAuth, (req, res) => {
     Post.update({
-        title: req.params.title,
-        content: req.params.content
+        title: req.body.title,
+        content: req.body.content
     },
         {
             where: {
                 id: req.params.id
             }
         })
+
         .then(dbPostData => {
             if (!dbPostData) {
                 res.status(404).json({ message: 'A post with this id does not exist' });
                 return
             }
+            console.log("This is some text", dbPostData)
             res.json(dbPostData);
         })
         .catch(err => {
@@ -113,12 +115,12 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // Deletes a blog post
-router.delete('/id', withAuth, async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const postData = await Post.destroy({
             where: {
                 id: req.params.id,
-                user_id: req.params.user_id,
+                user_id: req.session.user_id,
             },
         });
 

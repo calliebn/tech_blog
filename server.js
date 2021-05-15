@@ -18,7 +18,7 @@ const hbs = exphbs.create({ helpers });
 // Session 
 const sess = {
     secret: process.env.SECRET,
-    cookie: {},
+    cookie: { maxAge: 3600000 },
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
@@ -32,7 +32,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
