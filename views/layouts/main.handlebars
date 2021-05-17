@@ -19,16 +19,10 @@
                 Tech Blog
             </div>
         </div>
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
-        </div>
 
-        <div id="navbar" class="navbar-menu">
+        <div id="navbar" class="navbar-menu is active">
             <div class="navbar-start">
-                <a class="navbar-item" href="/">Home</a>
+                {{!-- <a class="navbar-item" href="/">Home</a> --}}
                 <a class="navbar-item" href="/dashboard">Dashboard</a>
                 {{#if logged_in}}
                 <a class="navbar-item" href="/logout" id="logout">Log Out</a>
