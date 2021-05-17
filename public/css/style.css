@@ -31,7 +31,8 @@ h3 {
   margin-bottom: 10px;
 }
 
-p {
+p,
+.text {
   margin-top: 0;
   font-size: 18px;
   font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -42,7 +43,7 @@ p {
   color: #fff;
   font-size: 24px;
   font-weight: 800;
-  padding: 5px 10px 10px 10px;
+  padding: 0 10px 10px 10px;
 }
 
 .button a {
@@ -74,6 +75,19 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.section {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   margin: auto;
   margin-bottom: 20px;
 }
